@@ -1,6 +1,6 @@
 import React from "react";
 
-import s from "@/src/styles/Home.module.css";
+import s from "@/styles/Home.module.css";
 
 const Home: React.FC = () => {
   return (
