@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "fmt": "prettier --ignore-path './.gitignore' --list-different --write '**/*.{js,ts,tsx,css,json}'",
     "lint": "next lint",
-    "fmt": "prettier --ignore-path './.gitignore' --list-different --write '**/*.{js,ts,tsx,css,json}'"
+    "ci:fmt": "prettier --check '**/*.{js,ts,tsx,css,json}'"
   },
   "dependencies": {
     "next": "^13.1.6",
