@@ -4,18 +4,33 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next build && next export",
+    "lint:js": "eslint --ignore-path .gitignore '**/*.{js,ts,tsx}'",
+    "lint:css": "stylelint --ignore-path .gitignore '**/*.css'",
+    "lint": "npm run lint:js && npm run lint:css",
+    "fix:js": "npm run lint:js -- --fix",
+    "fix:css": "npm run lint:css -- --fix",
+    "fmt": "prettier --ignore-path .gitignore --list-different --write '**/*.{js,ts,tsx,css,json}' && npm run fix:js && npm run fix:css",
+    "check-style": "prettier --ignore-path .gitignore --check '**/*.{js,ts,tsx,css,json}'"
   },
   "dependencies": {
-    "@next/font": "13.1.6",
-    "@types/node": "18.13.0",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.10",
-    "next": "13.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "^2.8.4",
+    "stylelint": "^15.1.0",
+    "stylelint-config-recess-order": "^3.1.0",
+    "stylelint-config-standard": "^30.0.1",
+    "stylelint-order": "^6.0.2",
+    "typescript": "^4.9.5"
   }
 }
