@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "fmt": "prettier --ignore-path './.gitignore' --list-different --write '**/*.{js,ts,tsx,css,json}'",
-    "lint": "next lint",
-    "ci:fmt": "prettier --check '**/*.{js,ts,tsx,css,json}'"
+    "fix:js": "eslint --fix --ignore-path .gitignore '**/*.{js,ts,tsx}'",
+    "fmt": "prettier --ignore-path .gitignore --list-different --write '**/*.{js,ts,tsx,css,json}' && npm run fix:js",
+    "lint:js": "eslint --ignore-path .gitignore '**/*.{js,ts,tsx}'",
+    "check-style": "prettier --ignore-path .gitignore --check '**/*.{js,ts,tsx,css,json}'"
   },
   "dependencies": {
     "next": "^13.1.6",
