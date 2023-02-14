@@ -18,3 +18,15 @@
 .stateLayer {
   background-color: var(--c-on-background-variant);
 }
+
+.container:hover .stateLayer {
+  opacity: var(--s-hover);
+}
+
+.container:focus-visible .stateLayer {
+  opacity: var(--s-focus-visible);
+}
+
+.container:active .stateLayer {
+  opacity: var(--s-active);
+}
