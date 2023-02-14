@@ -1,5 +1,8 @@
 :root {
+  --c-surface: #49454f;
   --c-background: #1c1b1f;
+  --c-on-surface: #fff;
+  --c-on-surface-variant: #cac4d0;
   --c-on-background: #fff;
   --c-on-background-variant: #cac4d0;
   --s-hover: 0.16;
