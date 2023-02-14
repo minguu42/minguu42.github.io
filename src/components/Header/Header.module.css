@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 960px;
+  height: 64px;
+  padding: 0 16px;
+  margin: 0 auto;
+  background-color: var(--c-background);
+}
+
+.spacer {
+  flex: 1 1 0;
+}
