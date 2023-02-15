@@ -21,13 +21,22 @@ export const Home: NextPage<Props> = ({ allPostHeads }) => {
       <Header />
       <main className={s.main}>
         <h1 className={s.heading}>Blog</h1>
-        {allPostHeads.map(({ slug, title, createdOn }) => (
-          <Card key={slug} title={title} description="" date={createdOn} />
+        {allPostHeads.map(({ slug, title, description, createdOn, updatedOn }) => (
+          <Card
+            key={slug}
+            slug={slug}
+            title={title}
+            description={description}
+            createdOn={createdOn}
+            updatedOn={updatedOn}
+          />
         ))}
       </main>
     </div>
   );
 };
+
+export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const allPostHeads = getSortedPostHeads();
@@ -37,5 +46,3 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
   };
 };
-
-export default Home;

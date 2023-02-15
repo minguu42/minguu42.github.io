@@ -21,7 +21,12 @@ export const getSortedPostHeads = (): PostHead[] => {
 
     return {
       slug,
-      ...(matterResult.data as { title: string; createdOn: string }),
+      ...(matterResult.data as {
+        title: string;
+        description: string;
+        createdOn: string;
+        updatedOn: string;
+      }),
     };
   });
 
@@ -44,7 +49,12 @@ export const getPostData = async (slug: string): Promise<PostData> => {
 
   return {
     slug,
-    ...(matterResult.data as { title: string; createdOn: string }),
+    ...(matterResult.data as {
+      title: string;
+      description: string;
+      createdOn: string;
+      updatedOn: string;
+    }),
     contentHTML,
   };
 };
