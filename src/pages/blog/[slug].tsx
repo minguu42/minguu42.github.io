@@ -1,8 +1,11 @@
-import { ParsedUrlQuery } from "querystring";
+import type { ParsedUrlQuery } from "querystring";
 
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Link from "next/link";
 
 import { getAllPostSlugs, getPostData } from "@/features/posts/posts";
+
+import s from "./Post.module.css";
 
 type Props = {
   postData: {
@@ -14,10 +17,11 @@ type Props = {
 
 export const Post: NextPage<Props> = ({ postData }) => {
   return (
-    <div>
+    <div className={s.article}>
       <h1>{postData.title}</h1>
       <div>{postData.createdOn}</div>
       <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
+      <Link href="/">戻る</Link>
     </div>
   );
 };
