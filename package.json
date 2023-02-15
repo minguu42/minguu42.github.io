@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "lint:js": "eslint --ignore-path .gitignore '**/*.{js,ts,tsx}'",
     "lint:css": "stylelint --ignore-path .gitignore '**/*.css'",
     "lint": "npm run --silent lint:js && npm run --silent lint:css",
