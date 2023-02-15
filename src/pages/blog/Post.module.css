@@ -1,0 +1,48 @@
+.article {
+  max-width: 750px;
+  padding: 12px;
+  margin: 0 auto;
+}
+
+.article h1 {
+  padding-bottom: 4px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: solid 2px gray;
+}
+
+.article h2 {
+  padding-bottom: 4px;
+  margin: 16px 0;
+  font-size: 21px;
+  font-weight: bold;
+  border-bottom: solid 1px gray;
+}
+
+.article h3 {
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.article p {
+  margin: 6px 0;
+}
+
+.article a {
+  color: #0af;
+  transition: opacity 0.1s linear;
+}
+
+.article a:hover {
+  opacity: 0.5;
+}
+
+.article ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 12px;
+  list-style-position: inside;
+}
