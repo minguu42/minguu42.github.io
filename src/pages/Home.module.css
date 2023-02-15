@@ -1,12 +1,5 @@
-.background {
-  min-height: 100dvh;
-  background-color: var(--c-background);
-}
-
 .main {
-  max-width: 960px;
   padding: 0 16px;
-  margin: 0 auto;
 }
 
 .heading {

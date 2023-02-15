@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 import { Card } from "@/components/Card";
-import { Header } from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import { getSortedPostHeads } from "@/features/posts/posts";
 import { PostHead } from "@/features/posts/type";
 
@@ -14,11 +14,10 @@ type Props = {
 
 export const Home: NextPage<Props> = ({ allPostHeads }) => {
   return (
-    <div className={s.background}>
+    <Layout>
       <Head>
         <title>Blog - minguu42</title>
       </Head>
-      <Header />
       <main className={s.main}>
         <h1 className={s.heading}>Blog</h1>
         {allPostHeads.map(({ slug, title, description, createdOn, updatedOn }) => (
@@ -32,7 +31,7 @@ export const Home: NextPage<Props> = ({ allPostHeads }) => {
           />
         ))}
       </main>
-    </div>
+    </Layout>
   );
 };
 
