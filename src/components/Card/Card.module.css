@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 144px;
+  padding: 12px 20px;
+  background-color: var(--c-surface);
+  border-radius: 12px;
+}
+
+.spacer {
+  flex: 1 1 0;
+}
+
+.title {
+  color: var(--c-on-surface);
+}
+
+.description,
+.date {
+  color: var(--c-on-surface-variant);
+}

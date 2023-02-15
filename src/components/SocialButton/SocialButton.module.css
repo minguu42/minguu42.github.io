@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+}
+
+.outline {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.stateLayer {
+  background-color: var(--c-on-background-variant);
+}
+
+.container:hover .stateLayer {
+  opacity: var(--s-hover);
+}
+
+.container:focus-visible .stateLayer {
+  opacity: var(--s-focus-visible);
+}
+
+.container:active .stateLayer {
+  opacity: var(--s-active);
+}
