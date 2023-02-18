@@ -1,0 +1,9 @@
+.background {
+  min-height: 100dvh;
+  background-color: var(--c-background);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}

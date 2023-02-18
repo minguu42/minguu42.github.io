@@ -1,14 +1,11 @@
 .article {
-  max-width: 750px;
-  padding: 12px;
-  margin: 0 auto;
+  padding: 16px;
+  color: var(--c-on-background);
 }
 
 .article h1 {
   padding-bottom: 4px;
   margin-bottom: 16px;
-  font-size: 24px;
-  font-weight: bold;
   border-bottom: solid 2px gray;
 }
 

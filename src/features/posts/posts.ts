@@ -2,9 +2,12 @@ import fs from "fs";
 import path from "path";
 
 import matter from "gray-matter";
-import { remark } from "remark";
+import rehypeHighlight from "rehype-highlight";
+import rehypeStringify from "rehype-stringify";
 import remarkGFM from "remark-gfm";
-import remarkHTML from "remark-html";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
 
 import type { PostData, PostHead } from "@/features/posts/type";
 
@@ -45,9 +48,12 @@ export const getPostData = async (slug: string): Promise<PostData> => {
   const matterResult = matter(fileContents);
   // TODO: エラー処理を追加する
 
-  const processedContent = await remark()
+  const processedContent = await unified()
+    .use(remarkParse)
     .use(remarkGFM)
-    .use(remarkHTML)
+    .use(remarkRehype)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
     .process(matterResult.content);
   const contentHTML = processedContent.toString();
 
