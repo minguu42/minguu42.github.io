@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Layout } from "@/components/Layout";
 import { getSortedPostHeads } from "@/features/posts/posts";
 import { PostCard } from "@/features/posts/PostCard";
-import { PostHead } from "@/features/posts/type";
+import type { PostHead } from "@/features/posts/type";
 
 import s from "./Home.module.css";
 
@@ -20,14 +20,13 @@ export const Home: NextPage<Props> = ({ allPostHeads }) => {
       </Head>
       <main className={s.main}>
         <h1 className={s.heading}>Blog</h1>
-        {allPostHeads.map(({ slug, title, description, createdOn, updatedOn }) => (
+        {allPostHeads.map((p) => (
           <PostCard
-            key={slug}
-            slug={slug}
-            title={title}
-            description={description}
-            createdOn={createdOn}
-            updatedOn={updatedOn}
+            key={p.slug}
+            slug={p.slug}
+            title={p.title}
+            published={p.published}
+            updated={p.updated}
           />
         ))}
       </main>
