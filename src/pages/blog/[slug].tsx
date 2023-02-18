@@ -22,6 +22,7 @@ export const Post: NextPage<Props> = ({ postData }) => {
       <main className={s.article}>
         <h1>{postData.title}</h1>
         <div>{postData.createdOn}</div>
+        {/* rome-ignore lint/security/noDangerouslySetInnerHtml: Markdownから生成したHTMLを埋め込む必要がある*/}
         <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
         <Link href="/">戻る</Link>
       </main>

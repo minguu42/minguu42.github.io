@@ -1,0 +1,9 @@
+{
+  "files": {
+    "ignore": [".next", "out", "next-env.d.ts"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "lineWidth": 100
+  }
+}
