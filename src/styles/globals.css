@@ -1,10 +1,7 @@
 :root {
-  --c-surface: #49454f;
-  --c-background: #1c1b1f;
-  --c-on-surface: #fff;
-  --c-on-surface-variant: #cac4d0;
-  --c-on-background: #fff;
-  --c-on-background-variant: #cac4d0;
+  --c-background: #202124;
+  --c-on-background: #e8eaed;
+  --c-on-background-variant: #bdc1c6;
   --s-hover: 0.16;
   --s-focus-visible: 0.2;
   --s-active: 0.2;
@@ -21,6 +18,14 @@
 }
 
 :where(a) {
-  color: inherit;
+  color: #8ab4f8;
   text-decoration: none;
+}
+
+:where(a:visited) {
+  color: #c58af9;
+}
+
+:where(a:hover) {
+  text-decoration: underline;
 }
