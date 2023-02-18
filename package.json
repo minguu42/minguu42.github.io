@@ -5,13 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint:js": "eslint --ignore-path .gitignore '**/*.{js,ts,tsx}'",
-    "lint:css": "stylelint --ignore-path .gitignore '**/*.css'",
-    "lint": "npm run --silent lint:js && npm run --silent lint:css",
-    "fix:js": "npm run --silent lint:js -- --fix",
-    "fix:css": "npm run --silent lint:css -- --fix",
-    "fmt": "prettier --ignore-path .gitignore --list-different --write '**/*.{js,ts,tsx,css,json}' && npm run --silent fix:js && npm run --silent fix:css",
-    "check-style": "prettier --ignore-path .gitignore --check '**/*.{js,ts,tsx,css,json}'"
+    "fmt:js": "rome format --write .",
+    "fmt:css": "stylelint --fix --ignore-path .gitignore '**/*.css'",
+    "fmt": "npm run --silent fmt:js && npm run --silent fmt:css",
+    "lint": "rome check .",
+    "rome-ci": "rome ci ."
   },
   "dependencies": {
     "clsx": "^1.2.1",
