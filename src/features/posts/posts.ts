@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 
 import matter from "gray-matter";
+import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
 import remarkGFM from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -51,6 +52,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
     .use(remarkParse)
     .use(remarkGFM)
     .use(remarkRehype)
+    .use(rehypeHighlight)
     .use(rehypeStringify)
     .process(matterResult.content);
   const contentHTML = processedContent.toString();
