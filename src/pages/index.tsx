@@ -20,15 +20,17 @@ export const Home: NextPage<Props> = ({ allPostHeads }) => {
       </Head>
       <main className={s.main}>
         <h1 className={s.heading}>Blog</h1>
-        {allPostHeads.map((p) => (
-          <PostCard
-            key={p.slug}
-            slug={p.slug}
-            title={p.title}
-            published={p.published}
-            updated={p.updated}
-          />
-        ))}
+        <ul>
+          {allPostHeads.map((p) => (
+            <PostCard
+              key={p.slug}
+              slug={p.slug}
+              title={p.title}
+              published={p.published}
+              updated={p.updated}
+            />
+          ))}
+        </ul>
       </main>
     </Layout>
   );
