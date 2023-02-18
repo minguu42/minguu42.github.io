@@ -27,14 +27,13 @@ export const getSortedPostHeads = (): PostHead[] => {
       slug,
       ...(matterResult.data as {
         title: string;
-        description: string;
-        createdOn: string;
-        updatedOn: string;
+        published: string;
+        updated: string;
       }),
     };
   });
 
-  return allPostsData.slice().sort((a, b) => (a.createdOn < b.createdOn ? 1 : -1));
+  return allPostsData.slice().sort((a, b) => (a.published < b.published ? 1 : -1));
 };
 
 export const getAllPostSlugs = (): string[] => {
@@ -61,9 +60,8 @@ export const getPostData = async (slug: string): Promise<PostData> => {
     slug,
     ...(matterResult.data as {
       title: string;
-      description: string;
-      createdOn: string;
-      updatedOn: string;
+      published: string;
+      updated: string;
     }),
     contentHTML,
   };
