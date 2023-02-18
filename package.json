@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export && next-export-optimize-images",
     "fmt:js": "rome format --write .",
     "fmt:css": "stylelint --fix '**/*.css'",
     "fmt": "npm run --silent fmt:js && npm run --silent fmt:css",
