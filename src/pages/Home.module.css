@@ -1,7 +1,12 @@
 .main {
-  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 16px;
 }
 
 .heading {
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--c-on-background);
 }

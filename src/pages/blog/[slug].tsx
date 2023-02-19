@@ -5,15 +5,11 @@ import Link from "next/link";
 
 import { Layout } from "@/components/Layout";
 import { getAllPostSlugs, getPostData } from "@/features/posts/posts";
-
+import type { PostData } from "@/features/posts/type";
 import s from "./Post.module.css";
 
 type Props = {
-  postData: {
-    title: string;
-    createdOn: string;
-    contentHTML: string;
-  };
+  postData: PostData;
 };
 
 export const Post: NextPage<Props> = ({ postData }) => {
@@ -21,7 +17,7 @@ export const Post: NextPage<Props> = ({ postData }) => {
     <Layout>
       <main className={s.article}>
         <h1>{postData.title}</h1>
-        <div>{postData.createdOn}</div>
+        <div>{postData.published}</div>
         {/* rome-ignore lint/security/noDangerouslySetInnerHtml: Markdownから生成したHTMLを埋め込む必要がある*/}
         <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
         <Link href="/">戻る</Link>

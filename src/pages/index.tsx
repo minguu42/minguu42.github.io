@@ -1,10 +1,10 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
-import { Card } from "@/components/Card";
 import { Layout } from "@/components/Layout";
 import { getSortedPostHeads } from "@/features/posts/posts";
-import { PostHead } from "@/features/posts/type";
+import { PostCard } from "@/features/posts/PostCard";
+import type { PostHead } from "@/features/posts/type";
 
 import s from "./Home.module.css";
 
@@ -20,16 +20,17 @@ export const Home: NextPage<Props> = ({ allPostHeads }) => {
       </Head>
       <main className={s.main}>
         <h1 className={s.heading}>Blog</h1>
-        {allPostHeads.map(({ slug, title, description, createdOn, updatedOn }) => (
-          <Card
-            key={slug}
-            slug={slug}
-            title={title}
-            description={description}
-            createdOn={createdOn}
-            updatedOn={updatedOn}
-          />
-        ))}
+        <ul>
+          {allPostHeads.map((p) => (
+            <PostCard
+              key={p.slug}
+              slug={p.slug}
+              title={p.title}
+              published={p.published}
+              updated={p.updated}
+            />
+          ))}
+        </ul>
       </main>
     </Layout>
   );

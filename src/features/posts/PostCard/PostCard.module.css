@@ -1,0 +1,14 @@
+.container {
+  max-width: 600px;
+  padding: 16px 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.published {
+  font-size: 0.875rem;
+  color: var(--c-on-background-variant);
+}
